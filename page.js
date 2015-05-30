@@ -5,7 +5,7 @@ ipc.on('asynchronous-reply', function(arg) {
 });
 if(document.getElementsByClassName("Hero__login").length > 0){
 	document.getElementsByClassName("Hero__login")[0].click();
-	document.getElementsByClassName("LoginModal__backdrop")[0].style.backgroundColor = "rgba(51,51,51,1)";
+	document.getElementsByClassName("LoginModal__backdrop")[0].style.backgroundColor = "rgba(51,51,51,0.3)";
 	document.getElementsByClassName("LoginModal__backdrop")[0].onclick = function(event){
 		event.stopPropagation();
 	};
@@ -138,4 +138,6 @@ else{
 	}
 
 })();
-ipc.send('asynchronous-message', 'show');
+process.nextTick(function(){
+	ipc.send('asynchronous-message', 'show');
+});

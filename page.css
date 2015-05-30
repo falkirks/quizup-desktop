@@ -13,3 +13,18 @@ html{
 .Notifications{
 	display: none;
 }
+.Hero__wrapper{
+	display: none;
+}
+.LoginModal__logo{
+	display: none;
+}
+.LoginModal__close{
+	display: none;
+}
+.LoginModal__container{
+	margin-top: 20px !important;
+	margin-right: auto;
+	margin-bottom: 10px !important;
+	margin-left: auto;
+}

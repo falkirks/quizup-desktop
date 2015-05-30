@@ -33,7 +33,7 @@ app.on('ready', function () {
 		// for multiple windows store them in an array
 		mainWindow = null;
 	});
-	mainWindow.webContents.on('did-finish-load', function () {
+	mainWindow.webContents.on('dom-ready', function () {
 		mainWindow.webContents.executeJavaScript(fs.readFileSync(__dirname + "/page.js", "utf8"));
 		mainWindow.webContents.insertCSS(fs.readFileSync(__dirname + "/page.css", "utf8"));
 	});
@@ -43,6 +43,9 @@ app.on('ready', function () {
 		switch (arg) {
 			case 'show':
 				mainWindow.show();
+				break;
+			case 'hide':
+
 				break;
 		}
 	});
