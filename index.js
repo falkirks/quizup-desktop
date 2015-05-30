@@ -42,7 +42,7 @@ app.on('ready', function () {
 		console.log(arg);  // prints "ping"
 		event.sender.send('asynchronous-reply', 'pong');
 		switch (arg) {
-			case 'show':
+			case 'ready':
 				mainWindow.show();
 				break;
 			case 'hide':

@@ -87,12 +87,12 @@ else{
 		/*if (deltaX < 0 && scrollX >= scrollMaxX) {
 			stopScrollX = true;
 			scrollToX = scrollMaxX;
-		}
+		}*/
 
 		if (deltaY < 0 && scrollY >= scrollMaxY) {
 			stopScrollY = true;
 			scrollToY = scrollMaxY;
-		}*/
+		}
 
 		if (debug > 0) {
 			console.log("stopScroll", stopScrollX, stopScrollY);
@@ -142,8 +142,8 @@ else{
 
 })();
 /**
- * 
+ *
  */
 process.nextTick(function(){
-	ipc.send('asynchronous-message', 'show');
+	ipc.send('asynchronous-message', 'ready');
 });
