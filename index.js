@@ -48,6 +48,7 @@ app.on('ready', function () {
 		resize: true
 	});
 	mainWindow.loadUrl('https://quizup.com');
+	mainWindow.blurWebView();
 	//mainWindow.webContents.executeJavaScript(fs.readFileSync(__dirname + "/page.js", "utf8"));
 
 	mainWindow.on('closed', function () {
@@ -55,8 +56,8 @@ app.on('ready', function () {
 		// for multiple windows store them in an array
 		mainWindow = null;
 	});
-	mainWindow.webContents.on('dom-ready', function () {
-		//mainWindow.webContents.insertCSS(fs.readFileSync(__dirname + "/page.css", "utf8"));
+	mainWindow.webContents.on('will-navigate', function () {
+		mainWindow.hide();
 	});
 	mainWindow.webContents.on('did-finish-load', function(){
 		for(var i = 0; i < scripts.length; i++) {
@@ -72,6 +73,7 @@ app.on('ready', function () {
 		switch (arg) {
 			case 'ready':
 				mainWindow.show();
+				//mainWindow.focusOnWebView();
 				break;
 			case 'hide':
 
