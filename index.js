@@ -12,9 +12,7 @@ require('crash-reporter').start();
 let mainWindow = null;
 
 app.on('window-all-closed', function () {
-	if (process.platform !== 'darwin') {
-		app.quit();
-	}
+	app.quit();
 });
 
 app.on('ready', function () {
@@ -35,6 +33,9 @@ app.on('ready', function () {
 	});
 	mainWindow.webContents.on('dom-ready', function () {
 		mainWindow.webContents.executeJavaScript(fs.readFileSync(__dirname + "/page.js", "utf8"));
+		//mainWindow.webContents.insertCSS(fs.readFileSync(__dirname + "/page.css", "utf8"));
+	});
+	mainWindow.webContents.on('did-frame-finish-load', function(){
 		mainWindow.webContents.insertCSS(fs.readFileSync(__dirname + "/page.css", "utf8"));
 	});
 	ipc.on('asynchronous-message', function (event, arg) {

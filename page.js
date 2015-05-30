@@ -71,17 +71,17 @@ else{
 			console.log("delta", deltaX, deltaY);
 		}
 
-		if (deltaX > 0 && scrollX <= 0) {
+		/*if (deltaX > 0 && scrollX <= 0) {
 			stopScrollX = true;
 			scrollToX = 0;
-		}
+		}*/
 
 		if (deltaY > 0 && scrollY <= 0) {
 			stopScrollY = true;
 			scrollToY = 0;
 		}
 
-		if (deltaX < 0 && scrollX >= scrollMaxX) {
+		/*if (deltaX < 0 && scrollX >= scrollMaxX) {
 			stopScrollX = true;
 			scrollToX = scrollMaxX;
 		}
@@ -89,7 +89,7 @@ else{
 		if (deltaY < 0 && scrollY >= scrollMaxY) {
 			stopScrollY = true;
 			scrollToY = scrollMaxY;
-		}
+		}*/
 
 		if (debug > 0) {
 			console.log("stopScroll", stopScrollX, stopScrollY);

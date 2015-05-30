@@ -10,9 +10,6 @@ html{
 .Header__profile__dropdown__content > .Dropdown__item:nth-child(4){
 	display: none;
 }
-.Notifications{
-	display: none;
-}
 .Hero__wrapper{
 	display: none;
 }
@@ -28,3 +25,4 @@ html{
 	margin-bottom: 10px !important;
 	margin-left: auto;
 }
+
