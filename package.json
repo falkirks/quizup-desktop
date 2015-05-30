@@ -1,0 +1,33 @@
+{
+  "name": "quizup-desktop",
+  "productName": "QuizupDesktop",
+  "version": "0.0.0",
+  "description": "My best app",
+  "license": "MIT",
+  "main": "index.js",
+  "repository": "Falkirks/quizup-desktop",
+  "author": {
+    "name": "Falkirks",
+    "email": "me@falkirks.com",
+    "url": "falkirks.com"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-packager . $npm_package_productName --prune --ignore=node_modules/electron-prebuilt --ignore=node_modules/electron-packager --ignore=.git"
+  },
+  "files": [
+    "index.js",
+    "page.css",
+    "page.js"
+  ],
+  "keywords": [
+    "electron-app"
+  ],
+  "devDependencies": {
+    "electron-packager": "^3.1.0",
+    "electron-prebuilt": "^0.25.1"
+  }
+}

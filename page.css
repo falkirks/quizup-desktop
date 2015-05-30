@@ -1,0 +1,15 @@
+html{
+	-webkit-user-select: none;
+}
+::-webkit-scrollbar {
+	display: none;
+}
+.Header__profile__dropdown__content > .Dropdown__item:nth-child(3){
+	display: none;
+}
+.Header__profile__dropdown__content > .Dropdown__item:nth-child(4){
+	display: none;
+}
+.Notifications{
+	display: none;
+}
