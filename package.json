@@ -1,6 +1,6 @@
 {
   "name": "quizup-desktop",
-  "productName": "QuizupDesktop",
+  "productName": "QuizUp",
   "version": "0.0.0",
   "description": "My best app",
   "license": "MIT",
@@ -16,7 +16,8 @@
   },
   "scripts": {
     "start": "electron .",
-    "build": "electron-packager . $npm_package_productName --prune --ignore=node_modules/electron-prebuilt --ignore=node_modules/electron-packager --ignore=.git"
+    "build": "node build.js",
+    "build-all": "node build.js --all"
   },
   "files": [
     "index.js",
@@ -27,7 +28,9 @@
     "electron-app"
   ],
   "devDependencies": {
-    "electron-packager": "^3.1.0",
-    "electron-prebuilt": "^0.25.1"
+    "electron-packager": "^4.1.2",
+    "electron-prebuilt": "^0.25.1",
+    "rimraf": "^2.3.4",
+    "shelljs": "^0.5.0"
   }
 }
