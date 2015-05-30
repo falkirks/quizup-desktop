@@ -144,6 +144,29 @@ else{
 /**
  *
  */
+function updatePage() {
+	switch (window.location.pathname) {
+		case '/settings':
+			console.log("HEYA");
+			//document.getElementsByTagName("body")[0].innerHTML += "<h1>Hello World</h1>";
+			document.getElementsByClassName("SettingsPage__main__sidebar")[0].innerHTML += '<div class="SettingsPage__main__sidebar__title">Desktop Settings</div><a href="#" id="desktopGeneralSettings" class="SettingsPage__main__sidebar__row"><span>General</span></a>';
+
+			document.getElementById("desktopGeneralSettings").onclick = function(){
+				this.className += " SettingsPage__main__sidebar__row--active";
+				document.getElementsByClassName("SettingsPage__main__body")[0].innerHTML = "<p>There isn\'t anything to change right now, but when there is, it will be right here.</p>";
+			};
+			break;
+	}
+}
+var oldLocation = window.location.pathname;
+setInterval(function() {
+	if(window.location.pathname != oldLocation) {
+		updatePage();
+		oldLocation = window.location.pathname;
+	}
+}, 100);
+updatePage();
+
 process.nextTick(function(){
 	ipc.send('asynchronous-message', 'ready');
 });
