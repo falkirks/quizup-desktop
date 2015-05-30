@@ -14,6 +14,9 @@ if(document.getElementsByClassName("Hero__login").length > 0){
 else{
 
 }
+/*
+ 	https://github.com/lloeki/unelastic
+ */
 (function () {
 
 	var debug = 0;
@@ -138,6 +141,9 @@ else{
 	}
 
 })();
+/**
+ * 
+ */
 process.nextTick(function(){
 	ipc.send('asynchronous-message', 'show');
 });
